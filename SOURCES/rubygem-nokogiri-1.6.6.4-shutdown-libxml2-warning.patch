@@ -1,0 +1,10 @@
+--- nokogiri-1.6.6.4/./lib/nokogiri/version.rb.nowarn	2015-11-20 05:50:37.000000000 +0900
++++ nokogiri-1.6.6.4/./lib/nokogiri/version.rb	2015-12-11 14:32:04.151973080 +0900
+@@ -34,6 +34,7 @@
+     end
+ 
+     def warnings
++      return []
+       return [] unless libxml2?
+ 
+       if compiled_parser_version != loaded_parser_version
