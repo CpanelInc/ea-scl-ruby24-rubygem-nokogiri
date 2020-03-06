@@ -45,7 +45,7 @@ sub _get_required {
 
     foreach my $node (@nodes) {
         my $href = $node->attr('href');
-        if ( $href && $href =~ m{^/gems/nokogiri/versions/(\d+\.\d+\.\d+)$} ) {
+        if ( $href && $href =~ m{^/downloads/nokogiri-(\d+\.\d+\.\d+)\.gem$} ) {
             my $this_version = $1;
             if ( !$version ) {
 
@@ -58,7 +58,7 @@ sub _get_required {
     die "Could not determine version\n" if !$version;
 
     $name = "nokogiri-${version}.gem";
-    $url  = "http://rubygems.org/gems/$name";
+    $url  = "https://rubygems.org/gems/$name";
 
     # now find sha
 
