@@ -16,7 +16,7 @@
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
 %define release_prefix 1
 
-%global mainver     1.7.1
+%global mainver     1.10.9
 
 %global gem_name     nokogiri
 %global gemdir      %{gem_dir}
@@ -173,8 +173,8 @@ rm -rf %{buildroot}%{geminstdir}/patches/
 %{gem_extdir_mri}/
 %dir    %{geminstdir}/
 %doc    %{geminstdir}/[A-Z]*
-%exclude %{geminstdir}/Rakefile
-%exclude %{geminstdir}/Gemfile
+# %exclude %{geminstdir}/Rakefile
+# %exclude %{geminstdir}/Gemfile
 %{geminstdir}/bin/
 %{geminstdir}/lib/
 %{gemdir}/specifications/%{gem_name}-%{mainver}.gemspec
@@ -182,11 +182,14 @@ rm -rf %{buildroot}%{geminstdir}/patches/
 
 %files  doc
 %defattr(-,root,root,-)
-%{geminstdir}/Rakefile
-%{geminstdir}/tasks/
-%{geminstdir}/test/
+# %{geminstdir}/Rakefile
+# %{geminstdir}/tasks/
+# %{geminstdir}/test/
 %{gemdir}/doc/%{gem_name}-%{mainver}
 
 %changelog
+* Fri Mar 06 2020 Tim Mullin <tim@cpanel.net> 1.10.9-1
+- EA-8901: Update to 1.10.9 from upstream
+
 * Mon Apr 17 2017 Rishwanth Yeddula <rish@cpanel.net> 1.7.1-1
 - initial packaging
