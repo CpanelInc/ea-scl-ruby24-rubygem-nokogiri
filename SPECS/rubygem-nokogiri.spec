@@ -14,7 +14,7 @@
 %{?scl:%scl_package rubygem-%{gem_name}}
 
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
-%define release_prefix 1
+%define release_prefix 2
 
 %global mainver     1.10.9
 
@@ -188,6 +188,9 @@ rm -rf %{buildroot}%{geminstdir}/patches/
 %{gemdir}/doc/%{gem_name}-%{mainver}
 
 %changelog
+* Tue Dec 28 2021 Dan Muey <dan@cpanel.net> - 1.10.9-2
+- ZC-9589: Update DISABLE_BUILD to match OBS
+
 * Fri Mar 06 2020 Tim Mullin <tim@cpanel.net> 1.10.9-1
 - EA-8901: Update to 1.10.9 from upstream
 
