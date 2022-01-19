@@ -16,7 +16,7 @@
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
 %define release_prefix 2
 
-%global mainver     1.10.9
+%define mainver     1.10.9
 
 %global gem_name     nokogiri
 %global gemdir      %{gem_dir}
